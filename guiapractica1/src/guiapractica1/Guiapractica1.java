@@ -33,21 +33,93 @@ public class Guiapractica1 {
          Ejer15();
          Ejer16();
         */
-        Ejer10();
+        Ejer27();
         
         
         // TODO code application logic here
                    
     }
     
-    public static void  suma(){
-        System.out.print("INGRESE EL PRIMER NUMERO: ");
-        double num1 = texto.nextDouble();
-        System.out.print("INGRESE EL SEGUNDO NUMERO: ");
-        double num2 = texto.nextDouble();
-         System.out.print("La suma de los siguientes números "+num1+" + "+num2+" es: "+(num1+num2));
-          System.out.print("");
+     /*
+    Tipos de datos – Visualización del contenido
+a.  Escribir un código que inicialice 3 variables texto, entero y boolean. Para cada 
+una de las variables visualizar en pantalla el valor de las variables.
+    */
+     public static void  Ejer1(){
+        String texto="HOLA";
+        int num=1234;
+        boolean verdad=true;
+          System.out.print("Variable texto: "+texto+" variable nnumero: "+num+" variable boolean: "+verdad);
     }
+     
+     /*
+     Escribir un programa que:
+a.  Inicialice las siguientes variables:
+i.  ENTERO a = 100;
+ii.  DECIMAL b = 2.3;
+b.  Declare las siguientes variables:
+i.  ENTERO exp1;
+ii.  DECIMAL exp2;
+c.  Realice las siguientes asignaciones:
+i.  exp1 = a / b;
+ii.  exp2 = a / b; 
+d.  ¿Qué errores se producen? ¿Cómo se pueden salvar? 
+     */
+     
+     public static void  Ejer2(){
+       int a= 100;
+       double b=2.3;
+       double exp1;
+       double exp2;
+      
+       exp1=a/b;
+       exp2=a/b;
+          
+    }
+     
+     /*
+     Instrucciones de asignación (entender los cambios en las posiciones de memoria)
+a.  Escribir un programa que: - Declare e inicialice 3 variables enteras a, b, c con 
+los siguientes valores: a=10; b=-8; c = 36 
+i.  Visualice el contenido de las tres variables
+ii.  Realice las siguientes operaciones de asignación: a=b; b=c; c = a;
+iii.   Visualice nuevamente el contenido de las tres variables.
+b.  Ejecute el programa
+c.  Explique los cambios en los valores de las variables.
+     */
+     public static void Ejer3(){
+      int a=10;
+      int b =8;
+      int c=36;
+         System.out.println("A: "+a+" B: "+b+" C: "+c);
+      a=b;
+      b=c;
+      c=a;
+      System.out.println("A: "+a+" B: "+b+" C: "+c);
+      //una vez realiazdo las asignaciones se pierde el valor que contenia la variable a ya que nose respaldo
+     }
+     
+     /*
+     Declara 2 variables numéricas (con el valor que desees), he indica cual es mayor de los 
+dos. Si son iguales indicarlo también. Cambiar los valores para comprobar que 
+funciona.
+     */
+    public static void  Ejer4(){
+       int num1=30;
+       int num2=25;
+       
+       if (num1>=num2){
+            
+            if(num1==num2){
+                System.out.println("Los numeros "+num1+" y "+num2+" son iguales");
+            }else{
+                System.out.println("El número "+num1+" es mayor que "+num2);
+            }
+        }else{
+            System.out.println("El número "+num2+" es mayor que "+num1);
+        }
+    }
+    
     /*
     Declara un String que contenga tu nombre, después muestra un mensaje de
 bienvenida por consola. Por ejemplo: si introduzco “Fernando”, me aparezca
@@ -363,8 +435,7 @@ número de cifras que tiene.
                     contador++;
                 }
             }
-  
-  
+   
             if (contador<1){
                 System.out.println(i);
             }
@@ -418,8 +489,60 @@ línea recta, separados por un espacio entre cada carácter.
             }
     
 }
-          
         
+        /*
+        Crea una aplicación llamada CalculadoraPolacaInversaApp, nos pedirá 2 operandos 
+(int) y un signo aritmético (String), según este último se realizara la operación 
+correspondiente. Al final mostrara el resultado. Hacer tantas operaciones como desee 
+el usuario
+Los signos aritméticos disponibles son:
++: suma los dos operandos.
+-: resta los operandos.
+*: multiplica los operandos.
+/: divide los operandos, este debe dar un resultado con decimales (double)
+^: 1º operando como base y 2º como exponente.
+%: módulo, resto de la división entre operando1 y operando2.  
+        */
+          
+        public static void Ejer27(){
+            
+        double op1;
+        double op2;
+        double resultado=0;
+        
+        System.out.println("Ingrese un numero ");
+             op1 = texto.nextInt();
+             System.out.println("Escribe el codigo de operacion");
+        String operacion = texto.next();
+        System.out.println("Ingrese un numero ");
+             op2 = texto.nextInt();     
+        
+            switch (operacion){
+            case "+":
+                resultado=op1+op2;
+                break;
+            case "-":
+                resultado=op1-op2;
+                break;
+            case "*":
+                resultado=op1*op2;
+                break;
+            case "/":
+                resultado=op1/op2;
+                break;
+            case "^":
+                resultado=(int)Math.pow(op1, op2);
+                break;
+            case "%":
+                resultado=op1%op2;
+                break;
+        }
+  
+        System.out.println( op1+" "+operacion+" "+op2+" = "+resultado);
+             
+             
+             
+        }
            
               
       
